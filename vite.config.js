@@ -9,10 +9,10 @@ export default defineConfig({
         }),
     ],
 
-    css: {
+    scss: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@import "./resources/css/app.scss";`,
+                additionalData: `@import "resources/scss/app.scss";`,
             },
         },
     },

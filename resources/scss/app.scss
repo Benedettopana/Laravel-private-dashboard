@@ -1,0 +1,19 @@
+/* Importa Bootstrap SCSS */
+@import "bootstrap/scss/bootstrap";
+
+@import "./_color.scss";
+@import "./helper";
+
+@import "./headerStyle.scss";
+
+body .bg-main {
+    background: linear-gradient(
+        180deg,
+        var(--black) 0%,
+        var(--primary-color) 44%,
+        var(--secondary-color) 100%
+    ) !important;
+    height: 100vh;
+    overflow-y: auto;
+    color: white;
+}

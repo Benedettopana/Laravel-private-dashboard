@@ -1,0 +1,29 @@
+@import "./_color.scss";
+
+// Color
+.text-primary-app {
+    color: var(--primary-color);
+}
+.text-secondary-app {
+    color: var(--secondary-color);
+}
+.text-tertiary-app {
+    color: var(--tertiary-color);
+}
+.text-neutral-app {
+    color: var(--neutral-color);
+}
+
+// bg
+.bg-primary-app {
+    background-color: var(--primary-color);
+}
+.bg-secondary-app {
+    background-color: var(--secondary-color);
+}
+.bg-tertiary-app {
+    background-color: var(--tertiary-color);
+}
+.bg-neutral-app {
+    background-color: var(--neutral-color);
+}

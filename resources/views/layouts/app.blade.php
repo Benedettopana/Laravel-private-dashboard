@@ -8,28 +8,11 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'Laravel') }}</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login.form') }}">{{ __('Login') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register.form') }}">{{ __('Registrazione') }}</a>
-                    </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a>
-                        </li>
-                    @endguest
-                    </ul>
-            </div>
-        </nav>
+    <div id="app" class="bg-main">
+        {{-- header --}}
+        @include('partials.header')
 
-        <div class="container py-4">
+        <div class="container mt-5 py-4">
             <!-- Mostra i messaggi di successo -->
             @if(session('success'))
                 <div class="alert alert-success">
