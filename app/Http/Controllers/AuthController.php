@@ -58,23 +58,21 @@ class AuthController extends Controller
         }
 
         // Se il login fallisce
-        return redirect()->route('login.form')->withErrors(['email' => 'Credenziali non valide'])->withInput();
+        return redirect()->route('login')->withErrors(['email' => 'Credenziali non valide'])->withInput();
     }
 
     // Logout
-    public function logout(Request $request)
-    {
+    public function logout(Request $request){
 
-        $request->user()->tokens->each(function ($token) {
-            $token->delete();
-        });
+       // Elimina tutti i token attivi per l'utente
+        $request->user()->tokens()->delete();
 
-        // Svuoto la sessione
-        session()->flush();
+        // Invalida la sessione
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-        // Comunico che sono stato sloggato e ritorno alla pagina di login
-        return redirect()->route('login.form')->with('success', 'Sei stato disconnesso correttamente.');
-        // return response()->json(['message' => 'Logged out successfully']);
+        // Reindirizza alla home o al login con messaggio di successo
+        return redirect()->route('home')->with('success', 'Sei stato disconnesso correttamente.');
     }
 
 }

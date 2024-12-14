@@ -6,16 +6,29 @@
     overflow: hidden;
 
     .dashboard-aside-menu {
-        width: 300px;
-        min-width: 300px;
-        height: 100vh;
+        width: 200px;
+        min-width: 200px;
+        height: 90vh;
         overflow-y: auto;
-        background-color: aqua;
+        padding: 65px 20px;
+        // background-color: aqua;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        // RESET PADDING/MARGIN UL LI
+        ul {
+            padding-left: 0 !important;
+            li {
+                margin-bottom: 10px;
+            }
+        }
     }
 
     .dashboard-main-content {
-        padding: 50px;
-        width: calc(100% - 300px);
+        padding: 50px 20px;
+        width: calc(100% - 200px);
         height: 100vh;
         overflow-y: auto;
     }
