@@ -5,6 +5,27 @@
 @import "./helper";
 
 @import "./headerStyle.scss";
+@import "./dashboard/dashboardMain.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    word-wrap: break-word; /* Spezza le parole lunghe */
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%; /* Impedisce l'overflow */
+    overflow: unset; /* Nasconde il testo che esce */
+}
 
 body .bg-main {
     background: linear-gradient(
@@ -13,7 +34,18 @@ body .bg-main {
         var(--primary-color) 44%,
         var(--secondary-color) 100%
     ) !important;
+    padding-top: 80px;
     height: 100vh;
     overflow-y: auto;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.errors-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

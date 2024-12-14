@@ -12,26 +12,37 @@
         {{-- header --}}
         @include('partials.header')
 
-        <div class="container mt-5 py-4">
-            <!-- Mostra i messaggi di successo -->
-            @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
+        @guest
 
-            <!-- Mostra i messaggi di errore -->
-            @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                <!-- Mostra i messaggi di successo -->
+                <div class="errors-container d-flex justify-center mt-3">
+                    <div class="col-8">
+
+                        @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+
+                        <!-- Mostra i messaggi di errore -->
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
                 </div>
-            @endif
+
+                @yield('content')
+
+        @else
 
             @yield('content')
+        @endguest
         </div>
     </div>
 

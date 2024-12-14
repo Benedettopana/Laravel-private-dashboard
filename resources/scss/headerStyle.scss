@@ -3,9 +3,11 @@ header {
     height: 80px;
     background-color: transparent;
     position: fixed;
+    top: 0;
+    left: 0;
     background: linear-gradient(
         180deg,
-        rgba(0, 0, 0, 0.7) 60%,
+        rgba(0, 0, 0, 0.8) 85%,
         rgba(46, 7, 63, 0) 100%
     );
 

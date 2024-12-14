@@ -26,9 +26,11 @@
                     </div>
 
                 @else
-                    <div>
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                    {{-- <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a> --}}
+                </form>
                 @endguest
             </div>
         </div>
