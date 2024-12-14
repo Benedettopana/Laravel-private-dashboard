@@ -29,6 +29,6 @@ Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // Rotte protette con middleware "auth"
-Route::middleware('auth')->get('/dashboard', function () {
+Route::middleware('auth:sanctum')->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

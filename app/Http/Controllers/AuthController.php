@@ -64,9 +64,15 @@ class AuthController extends Controller
     // Logout
     public function logout(Request $request)
     {
-        $request->user()->tokens()->delete();
 
-         // Restituisci una risposta user-friendly
+        $request->user()->tokens->each(function ($token) {
+            $token->delete();
+        });
+
+        // Svuoto la sessione
+        session()->flush();
+
+        // Comunico che sono stato sloggato e ritorno alla pagina di login
         return redirect()->route('login.form')->with('success', 'Sei stato disconnesso correttamente.');
         // return response()->json(['message' => 'Logged out successfully']);
     }

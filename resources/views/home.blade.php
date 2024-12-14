@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Benvenuto nella Homepage</h1>
-
+    {{-- @dd(auth()->check()); --}}
     <p class="my-5">
         Ciao, <a href="{{ route('register.form')}}">Registrati</a> o effettua il <a href="{{ route('login.form')}}">Login</a>
     </p>
